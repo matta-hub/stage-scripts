@@ -11,11 +11,11 @@ terraform {
 
 # Provider configuratie
 provider "vcd" {
-    user     = "sapaasdevmv01"
-    password = "Hz%wiFkD=T6h+4p\"QnGF"
-    org      = "PaaS-Development-MV"
-    url      = "https://portal.ec.rijkscloud.nl/api"
-    vdc      = "Stage-VDC"
+    user     = "your-user"
+    password = "your-pass"
+    org      = "your-org
+    url      = "your-url"
+    vdc      = "your-vdc"
 }
 ##########################################################################################################
 # Data bronnen voor catalogus en media
