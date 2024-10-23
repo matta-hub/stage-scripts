@@ -1,2 +1,2 @@
 # stage-scripts
-mijn scripts van stage
+mijn Terraform scripts van stage
