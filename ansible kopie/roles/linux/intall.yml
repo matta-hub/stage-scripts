@@ -1,0 +1,8 @@
+---
+- hosts: linux_servers
+  become: yes
+  tasks:
+    - name: install apache2
+      apt:
+        name: apache2
+        state: latest

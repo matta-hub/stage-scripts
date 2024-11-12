@@ -1,0 +1,12 @@
+- name: Voeg DNS-record toe voor Linux Apache server
+  hosts: windows_servers
+  tasks:
+    - name: Maak A-record aan voor Linux Apache server
+      win_dns_record:
+        zone: "ansible.nl"
+        name: "www"
+        type: "A"
+        value: "192.168.1.123"
+        state: "present"
+
+

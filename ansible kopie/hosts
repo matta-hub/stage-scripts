@@ -1,0 +1,13 @@
+[linux_servers]
+(yourip) ansible_user=ansible
+
+[windows_servers]
+win_host ansible_host=(yourip)
+
+[windows_servers:vars]
+ansible_user=(yourusername)
+ansible_password=(yourpassword)
+ansible_connection=winrm
+ansible_winrm_transport=credssp
+ansible_winrm_credssp_disable_tlsv1_2=true 
+ansible_winrm_server_cert_validation=ignore

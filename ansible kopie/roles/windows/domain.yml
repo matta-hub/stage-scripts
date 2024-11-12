@@ -1,0 +1,18 @@
+---
+- name: Create a new domain
+  hosts: windows_servers
+  gather_facts: yes  # Ensure facts are gathered, as this is useful for domain setup
+  tasks:
+    - name: Create new domain in a new forest
+      ansible.windows.win_domain:
+        dns_domain_name: ansible.nl
+        safe_mode_password: password123!
+        state: domain  # Ensure this is set to 'domain' to create a new domain
+
+    - name: Install Active Directory Domain Services
+      ansible.windows.win_feature:
+        name: AD-Domain-Services
+        state: present
+    
+    - name: Reboot the machine with all defaults
+      ansible.windows.win_reboot:

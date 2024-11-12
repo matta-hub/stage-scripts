@@ -1,0 +1,22 @@
+
+---
+- name: Update Apache index.html
+  hosts: linux_servers  # Pas dit aan met de hostnaam of groep die je hebt gedefinieerd in je inventory
+  become: yes  # Zorg ervoor dat je sudo rechten hebt
+  tasks:
+    - name: Update index.html with custom content
+      copy:
+        content: |
+          <!DOCTYPE html>
+          <html lang="nl">
+          <head>
+              "your head content here"
+
+
+          </body>
+          </html>
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+      tags: update_index
